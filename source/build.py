@@ -487,7 +487,7 @@ os.makedirs(os.path.join(DEP, 'en'))
 shutil.copytree(FONT_SRC, os.path.join(DEP, 'fonts'))
 open(os.path.join(DEP,'index.html'),'w').write(site_page(FR,'en/',SITE,SITE+'en/','en', fonts=self_fonts('fonts/'), og_image=SITE+'og-fr.png'))
 open(os.path.join(DEP,'en','index.html'),'w').write(site_page(EN,'../',SITE+'en/',SITE,'fr', fonts=self_fonts('../fonts/'), og_image=SITE+'og-en.png'))
-open(os.path.join(DEP,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}sitemap.xml\n')
+open(os.path.join(DEP,'robots.txt'),'w').write(f'User-agent: *\nAllow: /\nDisallow: /source/\n\nSitemap: {SITE}sitemap.xml\n')
 open(os.path.join(DEP,'sitemap.xml'),'w').write(f'''<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url><loc>{SITE}</loc><xhtml:link rel="alternate" hreflang="fr" href="{SITE}"/><xhtml:link rel="alternate" hreflang="en" href="{SITE}en/"/><xhtml:link rel="alternate" hreflang="x-default" href="{SITE}"/></url>
