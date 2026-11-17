@@ -21,8 +21,11 @@ CSS = r"""
   --fg:#004F60; --fg2:#1F6E7E; --muted:#3D5F66;
   --action:#004F60; --on-action:#F3F7F8;
   --gold:#FCC200; --on-gold:#00303A; --mist:#9CC3CA;
-  --hero:#004F60; --on-hero:#F3F7F8; --on-hero-2:#B9D6DB; --hero-line:#1F6E7E;
-  --grid:rgba(156,195,202,.09); --trace:rgba(156,195,202,.55); --trace-2:rgba(156,195,202,.22); --gold-halo:rgba(252,194,0,.25);
+  --hero:#EAF2F4; --on-hero:#004F60; --on-hero-2:#1F6E7E; --hero-line:#C3D7DB; --hero-em:#004F60;
+  --grid:rgba(0,79,96,.07); --trace:rgba(0,79,96,.42); --trace-2:rgba(0,79,96,.16); --gold-halo:rgba(252,194,0,.4);
+  --band:#004F60; --on-band:#F3F7F8; --on-band-2:#B9D6DB; --band-line:#1F6E7E;
+  --mk-frame:#B9D0D5; --mk-curve:#004F60; --mk-dot:#FCC200;
+  --em-h:.32em; --em-b:.04em; --em-o:.5; --mock-shadow:0 24px 60px -28px rgba(0,79,96,.4);
   --sans:'IBM Plex Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 }
@@ -30,12 +33,16 @@ CSS = r"""
   --bg:#071C22; --surface:#0D2A32; --raised:#143843; --line:#24525C;
   --fg:#E8F1F3; --fg2:#9CC3CA; --muted:#8FB3B9;
   --action:#4FB3C1; --on-action:#071C22; --mist:#6E949B;
-  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2); color-scheme:dark } }
+  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --hero-em:#FCC200; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2);
+  --band:#0B2730; --on-band:#E8F1F3; --on-band-2:#9CC3CA; --band-line:#24525C; --mk-frame:#24525C; --mk-curve:#FCC200; --mk-dot:#F3F7F8;
+  --em-h:3px; --em-b:-.02em; --em-o:.55; --mock-shadow:0 24px 60px -24px rgba(0,0,0,.45); color-scheme:dark } }
 :root[data-theme="dark"]{
   --bg:#071C22; --surface:#0D2A32; --raised:#143843; --line:#24525C;
   --fg:#E8F1F3; --fg2:#9CC3CA; --muted:#8FB3B9;
   --action:#4FB3C1; --on-action:#071C22; --mist:#6E949B;
-  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2); color-scheme:dark }
+  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --hero-em:#FCC200; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2);
+  --band:#0B2730; --on-band:#E8F1F3; --on-band-2:#9CC3CA; --band-line:#24525C; --mk-frame:#24525C; --mk-curve:#FCC200; --mk-dot:#F3F7F8;
+  --em-h:3px; --em-b:-.02em; --em-o:.55; --mock-shadow:0 24px 60px -24px rgba(0,0,0,.45); color-scheme:dark }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -61,6 +68,7 @@ section,.hero-grid{scroll-margin-top:76px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-hero)}
 .brand svg{width:38px;height:38px;flex:none}
 .brand b{font-size:21px;letter-spacing:-.02em}
+.brand svg rect{stroke:var(--mk-frame)}.brand svg path{stroke:var(--mk-curve)}.brand svg circle{fill:var(--mk-dot)}
 .brand span{font-family:var(--mono);font-size:12px;letter-spacing:.35em;color:var(--on-hero-2);margin-left:2px}
 .nav{display:flex;align-items:center;gap:26px;font-size:15px}
 .nav a{text-decoration:none;color:var(--on-hero-2)}
@@ -73,7 +81,7 @@ section,.hero-grid{scroll-margin-top:76px}
 @media (max-width:520px){.nav .btn .l{display:none}.nav .btn .s{display:inline}.nav{gap:10px}.brand b{font-size:19px}.brand svg{width:34px;height:34px}}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;padding-block:64px 92px}
 .hero h1{font-size:clamp(2.05rem,4.1vw,3.35rem);font-weight:700;margin-top:18px}
-.hero h1 em{font-style:normal;color:var(--gold)}
+.hero h1 em{font-style:normal;color:var(--hero-em)}
 .hero .eyebrow{color:var(--on-hero-2)}
 .lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--on-hero-2);margin-top:22px;max-width:56ch}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -81,7 +89,7 @@ section,.hero-grid{scroll-margin-top:76px}
 @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:28px 64px}}
 
 /* product mock */
-.mock{background:var(--surface);color:var(--fg);border-radius:14px;padding:22px;box-shadow:0 24px 60px -24px rgba(0,0,0,.45);border:1px solid var(--line)}
+.mock{background:var(--surface);color:var(--fg);border-radius:14px;padding:22px;box-shadow:var(--mock-shadow);border:1px solid var(--line)}
 .mock-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
 .mock-h b{font-size:16px}
 .mock-h span{font-family:var(--mono);font-size:12px;color:var(--muted)}
@@ -143,12 +151,12 @@ section{padding-block:88px}
 .offer li{position:relative;padding-left:22px;color:var(--muted);font-size:16px}
 .offer li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:2px;background:var(--gold)}
 @media (max-width:760px){.offers{grid-template-columns:minmax(0,1fr)}}
-.pilot{margin-top:20px;background:var(--hero);color:var(--on-hero);border-radius:16px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center}
+.pilot{margin-top:20px;background:var(--band);color:var(--on-band);border-radius:16px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center}
 .pilot h3{font-size:1.55rem}
-.pilot p{color:var(--on-hero-2);margin-top:10px}
+.pilot p{color:var(--on-band-2);margin-top:10px}
 .pilot .btn{margin-top:22px}
 .pilot ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s}
-.pilot li{counter-increment:s;border-top:2px solid var(--hero-line);padding-top:12px;font-size:15px;line-height:1.45}
+.pilot li{counter-increment:s;border-top:2px solid var(--band-line);padding-top:12px;font-size:15px;line-height:1.45}
 .pilot li::before{content:counter(s, decimal-leading-zero);display:block;font-family:var(--mono);color:var(--gold);font-size:14px;margin-bottom:6px}
 @media (max-width:860px){.pilot{grid-template-columns:minmax(0,1fr);padding:26px}.pilot ol{grid-template-columns:minmax(0,1fr)}}
 
@@ -164,14 +172,14 @@ section{padding-block:88px}
 .about .sign{font-family:var(--mono);font-size:13px;color:var(--fg2);letter-spacing:.04em}
 @media (max-width:860px){.about{grid-template-columns:minmax(0,1fr);gap:20px}}
 
-.contact{background:var(--hero);color:var(--on-hero)}
+.contact{background:var(--band);color:var(--on-band)}
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-block:80px}
-.contact .eyebrow{color:var(--on-hero-2)}
+.contact .eyebrow{color:var(--on-band-2)}
 .contact h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:14px}
-.contact p{color:var(--on-hero-2);margin-top:14px;max-width:52ch}
-.mail{background:rgba(255,255,255,.05);border:1px solid var(--hero-line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
-.mail span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-hero-2)}
-.mail a.addr{font-family:var(--mono);font-size:clamp(1rem,2.2vw,1.25rem);color:var(--on-hero);word-break:break-all;user-select:all}
+.contact p{color:var(--on-band-2);margin-top:14px;max-width:52ch}
+.mail{background:rgba(255,255,255,.05);border:1px solid var(--band-line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.mail span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-band-2)}
+.mail a.addr{font-family:var(--mono);font-size:clamp(1rem,2.2vw,1.25rem);color:var(--on-band);word-break:break-all;user-select:all}
 .mail .row{display:flex;flex-wrap:wrap;gap:10px}
 @media (max-width:860px){.contact .wrap{grid-template-columns:minmax(0,1fr);padding-block:60px}}
 footer{padding-block:28px;font-size:13.5px;color:var(--muted)}
@@ -194,7 +202,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .mock .s{counter-reset:v var(--v);--v:var(--to)}
 .mock .s::after{content:counter(v)}
 .hero h1 em{position:relative;white-space:nowrap}
-.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.02em;height:3px;border-radius:2px;background:var(--gold);opacity:.55;transform-origin:left center}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:var(--em-b);height:var(--em-h);border-radius:2px;background:var(--gold);opacity:var(--em-o);transform-origin:left center;z-index:-1}
 .chip{position:relative}
 .chip::after{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid var(--gold);opacity:0}
 
@@ -411,6 +419,7 @@ def site_page(L, other_href, self_url, other_url, other_lang, with_switch=True, 
 <meta property="og:description" content="{E(L["meta_desc"])}">
 <meta property="og:url" content="{self_url}">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#EAF2F4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0B2730" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{FAV}">
 {f'<meta property="og:image" content="{og_image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">' if og_image else ''}
 {fonts if fonts is not None else FONTS}
@@ -437,7 +446,7 @@ PV_CSS = """
 .pv button{border:0;background:transparent;color:var(--fg);font:600 14px/1 var(--sans);padding:10px 16px;border-radius:999px;cursor:pointer}
 .pv button[aria-pressed="true"]{background:var(--action);color:var(--on-action)}
 .pv .sep{width:1px;background:var(--line);margin:6px 4px}
-@media (max-width:700px){.pv .dev{display:none}.pv .sep{display:none}}
+@media (max-width:700px){.pv .dev{display:none}.pv .sep{display:none}.pv button{padding:10px 13px}}
 .phone-view{min-height:100vh;background:var(--raised);display:flex;flex-direction:column;align-items:center;gap:16px;padding-block:32px 110px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 .phone-view p{margin:0;font-family:var(--mono);font-size:13px;color:var(--muted);text-align:center}
 .phone{width:412px;max-width:100%;height:min(844px, calc(100vh - 170px));min-height:560px;border-radius:46px;border:11px solid #0B1A1F;background:#0B1A1F;box-shadow:0 30px 70px -30px rgba(0,0,0,.5);overflow:hidden}
@@ -459,6 +468,8 @@ prev = f'''<title>Summit RMS site</title>
 <button type="button" data-pv-lang="fr" aria-pressed="true">FR</button><button type="button" data-pv-lang="en" aria-pressed="false">EN</button>
 <span class="sep"></span>
 <button type="button" class="dev" data-pv-dev="desktop" aria-pressed="true">Desktop</button><button type="button" class="dev" data-pv-dev="mobile" aria-pressed="false">Mobile</button>
+<span class="sep"></span>
+<button type="button" data-pv-theme="light" aria-pressed="false" aria-label="Light mode">Light</button><button type="button" data-pv-theme="dark" aria-pressed="false" aria-label="Dark mode">Dark</button>
 </div>
 <script>
 var pvLang='fr',pvDev='desktop';
@@ -471,6 +482,10 @@ document.querySelectorAll('[data-set-lang]').forEach(function(b){{b.addEventList
 document.querySelectorAll('[data-pv-lang]').forEach(function(b){{b.addEventListener('click',function(){{setLang(b.getAttribute('data-pv-lang'))}})}});
 document.querySelectorAll('[data-pv-dev]').forEach(function(b){{b.addEventListener('click',function(){{setDev(b.getAttribute('data-pv-dev'))}})}});
 try{{var s=localStorage.getItem('lang');if(s==='en')setLang('en')}}catch(e){{}}
+function setTheme(t){{document.documentElement.setAttribute('data-theme',t);document.querySelectorAll('[data-lang-frame]').forEach(function(f){{try{{f.contentDocument.documentElement.setAttribute('data-theme',t)}}catch(e){{}}}});press('data-pv-theme',t)}}
+document.querySelectorAll('[data-pv-theme]').forEach(function(b){{b.addEventListener('click',function(){{setTheme(b.getAttribute('data-pv-theme'))}})}});
+document.querySelectorAll('[data-lang-frame]').forEach(function(f){{f.addEventListener('load',function(){{var t=document.documentElement.getAttribute('data-theme');if(t)try{{f.contentDocument.documentElement.setAttribute('data-theme',t)}}catch(e){{}}}})}});
+press('data-pv-theme',matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 {COPY_JS}{FOCUS_JS}
 </script>
 '''

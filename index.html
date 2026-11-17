@@ -13,6 +13,7 @@
 <meta property="og:description" content="Summit RMS relie vos ordres de travail aux modes de défaillance de l&#x27;AMDEC pour piloter le plan de maintenance et les stocks de pièces par le risque. Démo sur demande.">
 <meta property="og:url" content="https://summit-reliability.fr/">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#EAF2F4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0B2730" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FCC200'/%3E%3Cpath d='M10 48 L20 38 L27 43 L38 19 L46 31 L54 48' stroke='%23004F60' stroke-width='5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <meta property="og:image" content="https://summit-reliability.fr/og-fr.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/ibm-plex-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin><style>@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-sans-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/ibm-plex-sans-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/ibm-plex-sans-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style>
@@ -23,8 +24,11 @@
   --fg:#004F60; --fg2:#1F6E7E; --muted:#3D5F66;
   --action:#004F60; --on-action:#F3F7F8;
   --gold:#FCC200; --on-gold:#00303A; --mist:#9CC3CA;
-  --hero:#004F60; --on-hero:#F3F7F8; --on-hero-2:#B9D6DB; --hero-line:#1F6E7E;
-  --grid:rgba(156,195,202,.09); --trace:rgba(156,195,202,.55); --trace-2:rgba(156,195,202,.22); --gold-halo:rgba(252,194,0,.25);
+  --hero:#EAF2F4; --on-hero:#004F60; --on-hero-2:#1F6E7E; --hero-line:#C3D7DB; --hero-em:#004F60;
+  --grid:rgba(0,79,96,.07); --trace:rgba(0,79,96,.42); --trace-2:rgba(0,79,96,.16); --gold-halo:rgba(252,194,0,.4);
+  --band:#004F60; --on-band:#F3F7F8; --on-band-2:#B9D6DB; --band-line:#1F6E7E;
+  --mk-frame:#B9D0D5; --mk-curve:#004F60; --mk-dot:#FCC200;
+  --em-h:.32em; --em-b:.04em; --em-o:.5; --mock-shadow:0 24px 60px -28px rgba(0,79,96,.4);
   --sans:'IBM Plex Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --mono:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
 }
@@ -32,12 +36,16 @@
   --bg:#071C22; --surface:#0D2A32; --raised:#143843; --line:#24525C;
   --fg:#E8F1F3; --fg2:#9CC3CA; --muted:#8FB3B9;
   --action:#4FB3C1; --on-action:#071C22; --mist:#6E949B;
-  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2); color-scheme:dark } }
+  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --hero-em:#FCC200; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2);
+  --band:#0B2730; --on-band:#E8F1F3; --on-band-2:#9CC3CA; --band-line:#24525C; --mk-frame:#24525C; --mk-curve:#FCC200; --mk-dot:#F3F7F8;
+  --em-h:3px; --em-b:-.02em; --em-o:.55; --mock-shadow:0 24px 60px -24px rgba(0,0,0,.45); color-scheme:dark } }
 :root[data-theme="dark"]{
   --bg:#071C22; --surface:#0D2A32; --raised:#143843; --line:#24525C;
   --fg:#E8F1F3; --fg2:#9CC3CA; --muted:#8FB3B9;
   --action:#4FB3C1; --on-action:#071C22; --mist:#6E949B;
-  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2); color-scheme:dark }
+  --hero:#0B2730; --on-hero:#E8F1F3; --on-hero-2:#9CC3CA; --hero-line:#24525C; --hero-em:#FCC200; --grid:rgba(156,195,202,.06); --trace:rgba(79,179,193,.5); --trace-2:rgba(79,179,193,.2); --gold-halo:rgba(252,194,0,.2);
+  --band:#0B2730; --on-band:#E8F1F3; --on-band-2:#9CC3CA; --band-line:#24525C; --mk-frame:#24525C; --mk-curve:#FCC200; --mk-dot:#F3F7F8;
+  --em-h:3px; --em-b:-.02em; --em-o:.55; --mock-shadow:0 24px 60px -24px rgba(0,0,0,.45); color-scheme:dark }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -63,6 +71,7 @@ section,.hero-grid{scroll-margin-top:76px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-hero)}
 .brand svg{width:38px;height:38px;flex:none}
 .brand b{font-size:21px;letter-spacing:-.02em}
+.brand svg rect{stroke:var(--mk-frame)}.brand svg path{stroke:var(--mk-curve)}.brand svg circle{fill:var(--mk-dot)}
 .brand span{font-family:var(--mono);font-size:12px;letter-spacing:.35em;color:var(--on-hero-2);margin-left:2px}
 .nav{display:flex;align-items:center;gap:26px;font-size:15px}
 .nav a{text-decoration:none;color:var(--on-hero-2)}
@@ -75,7 +84,7 @@ section,.hero-grid{scroll-margin-top:76px}
 @media (max-width:520px){.nav .btn .l{display:none}.nav .btn .s{display:inline}.nav{gap:10px}.brand b{font-size:19px}.brand svg{width:34px;height:34px}}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:56px;align-items:center;padding-block:64px 92px}
 .hero h1{font-size:clamp(2.05rem,4.1vw,3.35rem);font-weight:700;margin-top:18px}
-.hero h1 em{font-style:normal;color:var(--gold)}
+.hero h1 em{font-style:normal;color:var(--hero-em)}
 .hero .eyebrow{color:var(--on-hero-2)}
 .lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--on-hero-2);margin-top:22px;max-width:56ch}
 .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -83,7 +92,7 @@ section,.hero-grid{scroll-margin-top:76px}
 @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:28px 64px}}
 
 /* product mock */
-.mock{background:var(--surface);color:var(--fg);border-radius:14px;padding:22px;box-shadow:0 24px 60px -24px rgba(0,0,0,.45);border:1px solid var(--line)}
+.mock{background:var(--surface);color:var(--fg);border-radius:14px;padding:22px;box-shadow:var(--mock-shadow);border:1px solid var(--line)}
 .mock-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:16px}
 .mock-h b{font-size:16px}
 .mock-h span{font-family:var(--mono);font-size:12px;color:var(--muted)}
@@ -145,12 +154,12 @@ section{padding-block:88px}
 .offer li{position:relative;padding-left:22px;color:var(--muted);font-size:16px}
 .offer li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:2px;background:var(--gold)}
 @media (max-width:760px){.offers{grid-template-columns:minmax(0,1fr)}}
-.pilot{margin-top:20px;background:var(--hero);color:var(--on-hero);border-radius:16px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center}
+.pilot{margin-top:20px;background:var(--band);color:var(--on-band);border-radius:16px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center}
 .pilot h3{font-size:1.55rem}
-.pilot p{color:var(--on-hero-2);margin-top:10px}
+.pilot p{color:var(--on-band-2);margin-top:10px}
 .pilot .btn{margin-top:22px}
 .pilot ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:s}
-.pilot li{counter-increment:s;border-top:2px solid var(--hero-line);padding-top:12px;font-size:15px;line-height:1.45}
+.pilot li{counter-increment:s;border-top:2px solid var(--band-line);padding-top:12px;font-size:15px;line-height:1.45}
 .pilot li::before{content:counter(s, decimal-leading-zero);display:block;font-family:var(--mono);color:var(--gold);font-size:14px;margin-bottom:6px}
 @media (max-width:860px){.pilot{grid-template-columns:minmax(0,1fr);padding:26px}.pilot ol{grid-template-columns:minmax(0,1fr)}}
 
@@ -166,14 +175,14 @@ section{padding-block:88px}
 .about .sign{font-family:var(--mono);font-size:13px;color:var(--fg2);letter-spacing:.04em}
 @media (max-width:860px){.about{grid-template-columns:minmax(0,1fr);gap:20px}}
 
-.contact{background:var(--hero);color:var(--on-hero)}
+.contact{background:var(--band);color:var(--on-band)}
 .contact .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-block:80px}
-.contact .eyebrow{color:var(--on-hero-2)}
+.contact .eyebrow{color:var(--on-band-2)}
 .contact h2{font-size:clamp(1.7rem,3vw,2.4rem);margin-top:14px}
-.contact p{color:var(--on-hero-2);margin-top:14px;max-width:52ch}
-.mail{background:rgba(255,255,255,.05);border:1px solid var(--hero-line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
-.mail span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-hero-2)}
-.mail a.addr{font-family:var(--mono);font-size:clamp(1rem,2.2vw,1.25rem);color:var(--on-hero);word-break:break-all;user-select:all}
+.contact p{color:var(--on-band-2);margin-top:14px;max-width:52ch}
+.mail{background:rgba(255,255,255,.05);border:1px solid var(--band-line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.mail span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-band-2)}
+.mail a.addr{font-family:var(--mono);font-size:clamp(1rem,2.2vw,1.25rem);color:var(--on-band);word-break:break-all;user-select:all}
 .mail .row{display:flex;flex-wrap:wrap;gap:10px}
 @media (max-width:860px){.contact .wrap{grid-template-columns:minmax(0,1fr);padding-block:60px}}
 footer{padding-block:28px;font-size:13.5px;color:var(--muted)}
@@ -196,7 +205,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .mock .s{counter-reset:v var(--v);--v:var(--to)}
 .mock .s::after{content:counter(v)}
 .hero h1 em{position:relative;white-space:nowrap}
-.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:-.02em;height:3px;border-radius:2px;background:var(--gold);opacity:.55;transform-origin:left center}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:var(--em-b);height:var(--em-h);border-radius:2px;background:var(--gold);opacity:var(--em-o);transform-origin:left center;z-index:-1}
 .chip{position:relative}
 .chip::after{content:"";position:absolute;inset:-4px;border-radius:999px;border:2px solid var(--gold);opacity:0}
 
